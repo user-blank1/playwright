@@ -4,7 +4,7 @@ import { MyAccountPage } from "../page-objects/MyAccountPage.js";
 import { getLoginToken } from "../api-calls/getLoginToken.js";
 import { admin } from "../data/userDetails.js";
 
-test.only("My account cookie injection and mocking network request", async ({ page }) => {
+test("My account cookie injection and mocking network request", async ({ page }) => {
     //first we need a login token
     const loginToken = await getLoginToken(admin.username, admin.password);
     page.route("**/api/user**", async (route, request) => {
